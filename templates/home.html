@@ -10,11 +10,8 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
-    <title>Book Recommender System </title>
+    <title>Book Recommender</title>
     <style>
-        @import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
-
-        /*CSS for Navbar*/
         * {
             margin: 0;
             padding: 0;
@@ -34,6 +31,8 @@
             align-items: center;
             z-index: 99;
         }
+
+
 
         .logo {
             font-size: 2em;
@@ -89,28 +88,258 @@
             color: #162938;
         }
 
-        /* Additional CSS to align the heading */
-        .container {
-            padding-top: 100px;
-            /* Adjust padding to move the content below the navbar */
+        .introduction {
+            background-color: #f9f9f9;
+            padding: 80px 0;
+            text-align: center;
+            opacity: 0;
+            /* Initially hide the content */
         }
 
-        h1 {
+        .introduction-content {
+            max-width: 800px;
+            margin: 0 auto;
+            animation: fadeIn 1s forwards;
+            /* Apply fade-in animation */
+        }
+
+        .introduction-content h2 {
+            font-size: 2.5rem;
+            color: #333;
             margin-bottom: 20px;
-            /* Add margin bottom to create space between navbar and heading */
+        }
+
+        .introduction-content p {
+            font-size: 1.2rem;
+            color: #666;
+        }
+
+        /* Define the fade-in animation */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+                /* Optionally, you can add a slight upward movement */
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+
+        .about-us-wrapper {
+            padding: 40px 0;
+            /* Add padding to the wrapper */
+        }
+
+        .about-us-wrapper h2 {
+            font-size: 2.5rem;
+            color: #333;
+            /* Heading color */
+            text-align: center;
+        }
+
+        .about-us {
+            background-color: #fff;
+            /* Background color for the section */
+            padding: 40px;
+            /* Add padding to the section */
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .about-us-image {
+            width: 45%;
+        }
+
+        .about-us-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .about-us-content {
+            width: 50%;
+            padding: 0 20px;
+        }
+
+        .about-us-content h3 {
+            font-size: 1.8rem;
+            color: #333;
+            /* Heading color */
+            margin-bottom: 20px;
+        }
+
+        .about-us-content p {
+            font-size: 1.2rem;
+            color: #666;
+            /* Description color */
+        }
+
+        .why-choose-us ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .why-choose-us ul li {
+            margin-bottom: 10px;
+        }
+
+        #services {
+            background-color: #f9f9f9;
+            padding: 80px 0;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .container {
+            width: 90%;
+            margin: auto;
+        }
+
+        .service-item {
+            text-align: center;
+            padding: 40px 20px;
+            margin-bottom: 30px;
+            border-radius: 10px;
+            background-color: #fff;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .service-item i {
+            font-size: 3em;
+            margin-bottom: 20px;
+        }
+
+        .service-item h3 {
+            font-size: 1.5em;
+            margin-bottom: 15px;
+        }
+
+        .service-item p {
+            font-size: 1.1em;
+            color: #666;
+        }
+
+        /* Team section */
+        #our-team {
+            padding: 80px 0;
+            background-color: #f9f9f9;
+        }
+
+        .team-member {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .team-member img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            margin-bottom: 20px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .team-member h3 {
+            font-size: 24px;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .team-member p {
+            font-size: 16px;
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        .social-icons a {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            line-height: 40px;
+            background-color: #007bff;
+            color: #fff;
+            border-radius: 50%;
+            margin-right: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .social-icons a:hover {
+            background-color: #ed9b96;
+        }
+
+        /* Centering the heading */
+        #our-team h2 {
+            margin-bottom: 50px;
+        }
+
+        .footer {
+            background-color: rgb(180, 171, 171);
+            color: #fff;
+            padding: 50px 0;
+        }
+
+        .footer h3 {
+            color: #fff;
+        }
+
+        .footer p {
+            margin-bottom: 10px;
+        }
+
+        .footer ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .bottom-footer {
+            background-color: #333;
+            padding: 20px 0;
+            color: #fff;
+        }
+
+        .social-icons {
+            list-style: none;
+            padding: 0;
+        }
+
+        .social-icons li {
+            display: inline;
+            margin-right: 10px;
+        }
+
+        .social-icons li:last-child {
+            margin-right: 0;
+        }
+
+        .social-icons li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 20px;
         }
     </style>
-
-
-
-
 </head>
 
-<body style="background-color: aliceblue;">
+<body>
+    <!--navbar-->
     <header>
         <h2 class="logo">Logo</h2>
         <nav class="navigation">
             <a href="/">Home</a>
+            <a href="/suggestions">Top-50</a>
             <a href="/recommend">Recommender</a>
             <a href="/contact">Contact</a>
             {% if 'user_id' in session %}
@@ -121,33 +350,200 @@
             <!-- <button class="btnLogin-popup">Login</button> -->
 
 
-
         </nav>
     </header>
-    <div class="container">
-        <div class="row">
-            <div class="col-10">
-                <h2>Top 50 Books You must Read..</h2>
+    <!--Carousel-->
+    <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="image/wp5.jpg" class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block text-center">
+                    <h4 class="mb-3">Welcome Bibliophiles</h4>
+                    <h2 class="mb-3">MEET YOUR NEXT BOOK ON BOARD</h2>
+                    <p>Discover Your Next Adventure.Explore a World of Books and Stories</p>
+                    <button class="btn btn-success">Explore Suggested Books</button>
+                </div>
             </div>
+        </div>
+    </div>
+    <br>
 
-            {% for i in range(book_name|length) %}
-            <div class="col-md-3" style="margin-top:20px; ">
-                <div clss="card">
-                    <div class="card-body">
-                        <img class="card-img-top" src="{{ image[i] }}">
-                        <h4>{{ book_name[i] }}</h4>
-                        <p>{{ author[i] }}</p>
-                        <p>{{ publisher[i] }}</p>
-                        <p>Votes-{{ votes[i] }}</p>
-                        <p>Rating-{{ rating[i] }}</p>
+    <!--Introduction section-->
+    <div id="container">
+        <div class="row">
+            <div class="col-md-8 offset-md-2">
+                <div class="introduction-content text-center">
+                    <h2 class="mb-4">The more that you read, the more things you will know</h2>
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Numquam quam quaerat non voluptas iure
+                        blanditiis aut deserunt quas repellat ullam ea, velit dolor autem doloremque nisi! Inventore
+                        suscipit est sequi.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr>
+
+    <!--About us section-->
+    <section class="about-us-wrapper">
+        <h2>About Us</h2>
+        <div class="about-us">
+            <div class="about-us-image">
+                <img src="/image/team.jpg" alt="About Us Image">
+            </div>
+            <div class="about-us-content">
+                <div class="mission">
+                    <h3>Our Mission & Values</h3>
+                    <p>At [Your Website Name], we are dedicated to providing readers with access to diverse and
+                        enriching literary experiences. Our values center around promoting literacy, fostering
+                        community, and celebrating the power of storytelling.</p>
+                </div>
+                <div class="why-choose-us">
+                    <h4>Why Choose Us?</h4>
+                    <ul>
+                        <li> We handpick each book to ensure quality and diversity.</li>
+                        <li> Join our vibrant community of fellow book enthusiasts.</li>
+                        <li> Get personalized recommendations from our team of avid readers.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--Servises-->
+    <section id="services">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2>Our Services</h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="service-item">
+                        <img src="image/trending.jpg" alt="Trending Books" width="250">
+                        <br>
+                        <h3>Trending Books</h3>
+                        <p>Discover the hottest books that everyone is talking about. Stay updated with the latest
+                            trends and popular reads.</p>
+                        <button class="btn btn-outline-success">Suggest</button>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="service-item">
+                        <img src="image/recommender.png" alt="Recommender" width="300">
+                        <br>
+                        <h3>Recommender</h3>
+                        <p>Get personalized book recommendations based on your interests, reading history, and
+                            preferences.</p>
+                        <button class="btn btn-outline-success">Recommender</button>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="service-item">
+                        <img src="image/wishlist.jpg" alt="Wishlist" width="300">
+                        <br>
+                        <h3>Wishlist</h3>
+                        <p>Create your wishlist and keep track of the books you want to read. Never miss out on your
+                            favorite titles again.</p>
+                        <button class="btn btn-outline-success">View List</button>
                     </div>
                 </div>
             </div>
-
-
-            {% endfor %}        
         </div>
-    </div>       
+    </section>
+
+    <!--Our team -->
+    <section id="our-team">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2>Our Team</h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-3">
+                    <div class="team-member">
+                        <img src="image/member5.avif" alt="Team Member 1">
+                        <h3>John Doe</h3>
+                        <p>Founder & CEO</p>
+                        <p>John is an avid reader and the visionary behind our company. He is passionate about bringing
+                            the joy of reading to people worldwide.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="team-member">
+                        <img src="image/member1.avif" alt="Team Member 2">
+                        <h3>Jane Smith</h3>
+                        <p>Chief Editor</p>
+                        <p>Jane oversees the editorial process and ensures that our content meets the highest standards.
+                            She has a keen eye for detail and a passion for literature.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="team-member">
+                        <img src="image/member2.avif" alt="Team Member 3">
+                        <h3>Michael Johnson</h3>
+                        <p>Head of Technology</p>
+                        <p>Michael leads our technology team and ensures that our platform runs smoothly. He is
+                            passionate about innovation and enhancing user experience.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="team-member">
+                        <img src="image/member4.avif" alt="Team Member 4">
+                        <h3>Sarah Brown</h3>
+                        <p>Marketing Manager</p>
+                        <p>Sarah handles our marketing efforts and helps spread the word about our platform. She is
+                            creative, driven, and loves connecting with readers.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--Footer-->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h3>About Us</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin
+                        gravida dolor sit amet lacus accumsan et viverra justo commodo.</p>
+                </div>
+                <div class="col-md-4">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Suggestions</a></li>
+                        <li><a href="#">Recommender</a></li>
+                        <li><a href="#">Contact</a></li>
+                        <li><a href="#">Login</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h3>Contact Us</h3>
+                    <p>123 Book Street, Booktown</p>
+                    <p>Email: info@bookrecommender.com</p>
+                    <p>Phone: +123 456 7890</p>
+                </div>
+            </div>
+        </div>
+        <div class="bottom-footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <p>&copy; 2024 Book Recommender. All rights reserved.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+
+
+
+
 
 
 
