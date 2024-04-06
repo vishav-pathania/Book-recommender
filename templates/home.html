@@ -113,7 +113,11 @@
             <a href="/">Home</a>
             <a href="/recommend">Recommender</a>
             <a href="/contact">Contact</a>
-            <a class="btnLogin-popup" style="padding: 10px;" href="/login">Login</a>
+            {% if 'user_id' in session %}
+            <a href="/logout" class="btnLogout-popup" style="padding: 10px;">Logout</a>
+            {% else %}
+            <a href="/login" class="btnLogin-popup" style="padding: 10px;">Login</a>
+            {% endif %}
             <!-- <button class="btnLogin-popup">Login</button> -->
 
 
