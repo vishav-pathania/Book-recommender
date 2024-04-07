@@ -10,7 +10,7 @@ pt = pickle.load(open('pt.pkl', 'rb'))
 books = pickle.load(open('books.pkl', 'rb'))
 similarity_score = pickle.load(open('similarity_score.pkl', 'rb'))
 
-app = Flask(__name__)
+app = Flask(__name__ , static_folder='static')
 app.secret_key = 'your_secret_key_here'
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///users.db'
 db = SQLAlchemy(app)
@@ -22,14 +22,24 @@ class User(db.Model):
     password = db.Column(db.String(100), nullable=False)
 
 
-@app.route('/')
+@app.route('/Top-50')
 def index():
-    return render_template('home.html', book_name=list(popular_df['Book-Title'].values), 
+
+    # Check if user is logged in
+    if 'user_id' not in session:
+        # User is not logged in, redirect to login page
+        return redirect(url_for('login'))
+
+    return render_template('Top-50.html', book_name=list(popular_df['Book-Title'].values), 
                                     author=list(popular_df['Book-Author'].values), 
                                     publisher=list(popular_df['Publisher'].values),
                                     image=list(popular_df['Image-URL-M'].values), 
                                     votes=list(popular_df['num_ratings'].values), 
                                     rating=list(popular_df['avg_rating'].values))
+
+@app.route('/')
+def home():
+    return render_template('home.html')
 
 @app.route('/recommend')
 def recommend_ui():

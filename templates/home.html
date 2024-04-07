@@ -339,7 +339,7 @@
         <h2 class="logo">Logo</h2>
         <nav class="navigation">
             <a href="/">Home</a>
-            <a href="/suggestions">Top-50</a>
+            <a href="/Top-50">Top-50</a>
             <a href="/recommend">Recommender</a>
             <a href="/contact">Contact</a>
             {% if 'user_id' in session %}
@@ -356,7 +356,7 @@
     <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img src="image/wp5.jpg" class="d-block w-100" alt="...">
+                <img src="{{ url_for('static', filename='image/wp5.jpg') }}" class="d-block w-100" alt="...">
                 <div class="carousel-caption d-none d-md-block text-center">
                     <h4 class="mb-3">Welcome Bibliophiles</h4>
                     <h2 class="mb-3">MEET YOUR NEXT BOOK ON BOARD</h2>
@@ -388,7 +388,7 @@
         <h2>About Us</h2>
         <div class="about-us">
             <div class="about-us-image">
-                <img src="/image/team.jpg" alt="About Us Image">
+                <img src="{{ url_for('static', filename='image/team.jpg') }}" alt="About Us Image">
             </div>
             <div class="about-us-content">
                 <div class="mission">
@@ -420,7 +420,7 @@
             <div class="row">
                 <div class="col-lg-4">
                     <div class="service-item">
-                        <img src="image/trending.jpg" alt="Trending Books" width="250">
+                        <img src="{{ url_for('static', filename='image/trending.jpg') }}" alt="Trending Books" width="250">
                         <br>
                         <h3>Trending Books</h3>
                         <p>Discover the hottest books that everyone is talking about. Stay updated with the latest
@@ -430,7 +430,7 @@
                 </div>
                 <div class="col-lg-4">
                     <div class="service-item">
-                        <img src="image/recommender.png" alt="Recommender" width="300">
+                        <img src="{{ url_for('static', filename='image/recommender.png') }}" alt="Recommender" width="300">
                         <br>
                         <h3>Recommender</h3>
                         <p>Get personalized book recommendations based on your interests, reading history, and
@@ -440,7 +440,7 @@
                 </div>
                 <div class="col-lg-4">
                     <div class="service-item">
-                        <img src="image/wishlist.jpg" alt="Wishlist" width="300">
+                        <img src="{{ url_for('static', filename='image/wishlist.jpg') }}" alt="Wishlist" width="300">
                         <br>
                         <h3>Wishlist</h3>
                         <p>Create your wishlist and keep track of the books you want to read. Never miss out on your
@@ -463,7 +463,7 @@
             <div class="row">
                 <div class="col-lg-3">
                     <div class="team-member">
-                        <img src="image/member5.avif" alt="Team Member 1">
+                        <img src="{{ url_for('static', filename='image/member5.avif') }}" alt="Team Member 1">
                         <h3>John Doe</h3>
                         <p>Founder & CEO</p>
                         <p>John is an avid reader and the visionary behind our company. He is passionate about bringing
@@ -472,7 +472,7 @@
                 </div>
                 <div class="col-lg-3">
                     <div class="team-member">
-                        <img src="image/member1.avif" alt="Team Member 2">
+                        <img src="{{ url_for('static', filename='image/member1.avif') }}" alt="Team Member 2">
                         <h3>Jane Smith</h3>
                         <p>Chief Editor</p>
                         <p>Jane oversees the editorial process and ensures that our content meets the highest standards.
@@ -481,7 +481,7 @@
                 </div>
                 <div class="col-lg-3">
                     <div class="team-member">
-                        <img src="image/member2.avif" alt="Team Member 3">
+                        <img src="{{ url_for('static', filename='image/member2.avif') }}" alt="Team Member 3">
                         <h3>Michael Johnson</h3>
                         <p>Head of Technology</p>
                         <p>Michael leads our technology team and ensures that our platform runs smoothly. He is
@@ -490,7 +490,7 @@
                 </div>
                 <div class="col-lg-3">
                     <div class="team-member">
-                        <img src="image/member4.avif" alt="Team Member 4">
+                        <img src="{{ url_for('static', filename='image/member4.avif') }}" alt="Team Member 4">
                         <h3>Sarah Brown</h3>
                         <p>Marketing Manager</p>
                         <p>Sarah handles our marketing efforts and helps spread the word about our platform. She is
